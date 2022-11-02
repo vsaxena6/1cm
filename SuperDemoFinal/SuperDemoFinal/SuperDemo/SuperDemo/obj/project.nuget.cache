@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "GZgC0Qp3Ob2yDAMIebfSY/wVYrkfcVtnMv2XVPvTIFCx8CFNqW0FsNewosO0oUUJqwNB8trFO13SRsp9lu1bMQ==",
+  "success": true,
+  "projectFilePath": "C:\\Automation\\SuperDemo\\SuperDemo\\SuperDemo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alok.v.singh\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.11.1\\microsoft.visualstudio.azure.containers.tools.targets.1.11.1.nupkg.sha512"
+  ],
+  "logs": []
+}

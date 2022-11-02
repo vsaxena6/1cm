@@ -1,0 +1,8 @@
+# syntax=docker/dockerfile:1
+
+FROM %%FROM%%
+ADD  %%ADD%%
+WORKDIR %%WORKDIR%%
+RUN %%RUN%%
+ENTRYPOINT %%ENTRYPOINT%%
+EXPOSE %%EXPOSE%%
