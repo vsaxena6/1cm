@@ -46,21 +46,21 @@ echo "DOCKER FILE CREATED SUCCCESSFULLY AND PLACED AT - " $WORK_DIR " - AND FILE
 echo "Cloud Flag value is: " $CLOUD_FLAG_AZGCAW
 
 # This is for GKE
-if [ "$CLOUD_FLAG_AZGCAW" == "010" ]
-then
-	echo "STARTING GCP PROVISIONING & BUILD..."
-	echo "You selected Google Cloud Platform with Account: $GKE_ACCOUNT_ID."
-	sleep 5s
-	AZURE_RES_GROUP=0
-	AZURE_REGION=0
+# if [ "$CLOUD_FLAG_AZGCAW" == "010" ]
+# then
+#	echo "STARTING GCP PROVISIONING & BUILD..."
+#	echo "You selected Google Cloud Platform with Account: $GKE_ACCOUNT_ID."
+#	sleep 5s
+#	AZURE_RES_GROUP=0
+#	AZURE_REGION=0
 	
-	GKE_IMAGE="gcr.io/$GKE_ACCOUNT_ID/$REPOSITORY_NAME:latest"
-	sh build_docker_image.sh CLUSTER_NAME=$CLUSTER_NAME GKE_ACCOUNT_ID=$GKE_ACCOUNT_ID DOCKER_FILE_PATH=$WORK_DIR REPOSITORY_NAME=$REPOSITORY_NAME CLOUD_FLAG_AZGCAW=$CLOUD_FLAG_AZGCAW
-	IMG_NAME=$GKE_IMAGE
-fi
+#	GKE_IMAGE="gcr.io/$GKE_ACCOUNT_ID/$REPOSITORY_NAME:latest"
+#	sh build_docker_image.sh CLUSTER_NAME=$CLUSTER_NAME GKE_ACCOUNT_ID=$GKE_ACCOUNT_ID DOCKER_FILE_PATH=$WORK_DIR REPOSITORY_NAME=$REPOSITORY_NAME CLOUD_FLAG_AZGCAW=$CLOUD_FLAG_AZGCAW
+#	IMG_NAME=$GKE_IMAGE
+#fi
 
 # This is for AZURE
-if [ "$CLOUD_FLAG_AZGCAW" == "100" ]
+if [[ "$CLOUD_FLAG_AZGCAW" == "100" ]]
 then
 	echo "STARTING AZURE PROVISIONING & BUILD..."
 	echo "You selected Azure cloud with Azure resource group: $AZURE_RES_GROUP & Region: $AZURE_REGION."
@@ -75,18 +75,18 @@ then
 fi
 
 # This is for AWS
-if [ "$CLOUD_FLAG_AZGCAW" == "001" ]
-then
-	echo "STARTING AWS PROVISIONING & BUILD..."
-	echo "You selected Amazon Web Services cloud with Account: $AWS_ACCOUNT_ID & Region: $AWS_REGION."
-	sleep 5s
-	if [ -z "$CLUSTER_NAME" ]; then
-		CLUSTER_NAME=0;
-	fi
-	AWS_IMAGE="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$REPOSITORY_NAME:latest"
-	sh build_docker_image.sh CLUSTER_NAME=$CLUSTER_NAME DOCKER_FILE_PATH=$WORK_DIR REPOSITORY_NAME=$REPOSITORY_NAME  CLOUD_FLAG_AZGCAW=$CLOUD_FLAG_AZGCAW AWS_ACCOUNT_ID=$AWS_ACCOUNT_ID AWS_REGION=$AWS_REGION
-	IMG_NAME=$AWS_IMAGE
-fi
+#if [ "$CLOUD_FLAG_AZGCAW" == "001" ]
+#then
+#	echo "STARTING AWS PROVISIONING & BUILD..."
+#	echo "You selected Amazon Web Services cloud with Account: $AWS_ACCOUNT_ID & Region: $AWS_REGION."
+#	sleep 5s
+#	if [ -z "$CLUSTER_NAME" ]; then
+#		CLUSTER_NAME=0;
+#	fi
+#	AWS_IMAGE="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$REPOSITORY_NAME:latest"
+#	sh build_docker_image.sh CLUSTER_NAME=$CLUSTER_NAME DOCKER_FILE_PATH=$WORK_DIR REPOSITORY_NAME=$REPOSITORY_NAME  CLOUD_FLAG_AZGCAW=$CLOUD_FLAG_AZGCAW AWS_ACCOUNT_ID=$AWS_ACCOUNT_ID AWS_REGION=$AWS_REGION
+#	IMG_NAME=$AWS_IMAGE
+#fi
 # Create Kubernetes Objects dynamically and deploy
 echo "DOCKER IMAGE GENERATED SUCCESSFULLY AND NAME IS: " $IMG_NAME 
 sleep 10s
