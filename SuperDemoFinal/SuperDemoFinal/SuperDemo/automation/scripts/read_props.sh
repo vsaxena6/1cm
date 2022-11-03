@@ -60,8 +60,8 @@ echo "Cloud Flag value is: " $CLOUD_FLAG_AZGCAW
 #fi
 
 # This is for AZURE
-if [[ "$CLOUD_FLAG_AZGCAW" == "100" ]]
-then
+#if [[ "$CLOUD_FLAG_AZGCAW" == "100" ]]
+#then
 	echo "STARTING AZURE PROVISIONING & BUILD..."
 	echo "You selected Azure cloud with Azure resource group: $AZURE_RES_GROUP & Region: $AZURE_REGION."
 	sleep 5s
@@ -72,7 +72,7 @@ then
 	AZ_IMAGE="docker.io/aloksdocker/$REPOSITORY_NAME:latest"
 	sh build_docker_image.sh CLUSTER_NAME=$CLUSTER_NAME DOCKER_FILE_PATH=$WORK_DIR REPOSITORY_NAME=$REPOSITORY_NAME AZURE_RES_GROUP=$AZURE_RES_GROUP AZURE_REGION=$AZURE_REGION CLOUD_FLAG_AZGCAW=$CLOUD_FLAG_AZGCAW
 	IMG_NAME=$AZ_IMAGE
-fi
+#fi
 
 # This is for AWS
 #if [ "$CLOUD_FLAG_AZGCAW" == "001" ]
