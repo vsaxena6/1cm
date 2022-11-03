@@ -43,7 +43,7 @@ date=`date +"%Y-%m-%d-%H-%M-%S"`
 
 
 # Case of GCP
-if [[ "$CLOUD_FLAG_AZGCAW" == "010" ]]; then
+if [ "$CLOUD_FLAG_AZGCAW" == "010" ]; then
     IMG_NAME="gcr.io/$GKE_ACCOUNT_ID/$REPOSITORY_NAME:latest"
     #Authenticate yourself to GKE
     # gcloud auth login
@@ -62,7 +62,7 @@ if [[ "$CLOUD_FLAG_AZGCAW" == "010" ]]; then
     fi
 fi
 # Case of Azure
-if [[ "$CLOUD_FLAG_AZGCAW" == "100" ]]; then
+if [ "$CLOUD_FLAG_AZGCAW" == "100" ]; then
     
     az login
     az group create --name $AZURE_RES_GROUP --location $AZURE_REGION
@@ -78,7 +78,7 @@ if [[ "$CLOUD_FLAG_AZGCAW" == "100" ]]; then
 fi
 
 # Case of AWS
-if [[ "$CLOUD_FLAG_AZGCAW" == "001" ]]; then
+if [ "$CLOUD_FLAG_AZGCAW" == "001" ]; then
     aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
     #Creating repository to push image to repo
     aws ecr create-repository --repository-name $REPOSITORY_NAME --region $AWS_REGION
