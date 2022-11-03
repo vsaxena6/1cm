@@ -66,6 +66,7 @@ if [[ "$CLOUD_FLAG_AZGCAW" == "100" ]]; then
     
     az login
     az group create --name $AZURE_RES_GROUP --location $AZURE_REGION
+    az acr login --name 1cmregistry.azurecr.io
     if [ $CLUSTER_NAME==0 ]; then
         #Create new AKS cluster with the same name as RES Group
         CLUSTER_NAME=$AZURE_RES_GROUP
