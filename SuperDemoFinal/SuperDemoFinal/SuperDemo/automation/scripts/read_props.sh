@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 if [ $# -ne 3 ]; then
 	echo "Error: Number of arguments not equal to 3"
 	#echo "Info: Expecting 1 arguments, arg1 = application properties path"
