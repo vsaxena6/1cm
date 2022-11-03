@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 #app_input: Port#, Entrypoint, K8s cluster name, Namespace, AWS Region, AWS Account ID
 #Reading from app-input.properties and we are getting the value of AWS Region and AWS Account ID
