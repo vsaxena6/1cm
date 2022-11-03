@@ -7,7 +7,7 @@ if [ $# -ne 1 ]; then
 fi
 
 dir_name="$1"
-docker_temp_dir="/c/automation/superdemo/automation/template"
+docker_temp_dir="/home/vsaxena6/1cm/SuperDemoFinal/SuperDemoFinal/SuperDemo/automation/template"
 #extn="$2"
 #search_extn="*.""$extn"
 
