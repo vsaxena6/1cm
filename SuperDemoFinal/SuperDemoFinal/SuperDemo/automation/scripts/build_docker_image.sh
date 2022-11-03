@@ -64,7 +64,7 @@ fi
 # Case of Azure
 if [[ "$CLOUD_FLAG_AZGCAW" == "100" ]]; then
     
-    az login
+    az login --identity
     az group create --name $AZURE_RES_GROUP --location $AZURE_REGION
     if [ $CLUSTER_NAME==0 ]; then
         #Create new AKS cluster with the same name as RES Group
