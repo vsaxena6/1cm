@@ -74,7 +74,7 @@ if [[ "$CLOUD_FLAG_AZGCAW" == "100" ]]; then
     fi
     echo "CLUSTER CREATED. AUTHENTICATING WITH THE CURRENT USER..." 
     az aks get-credentials --resource-group $AZURE_RES_GROUP --name $CLUSTER_NAME
-    IMG_NAME="$REPOSITORY_NAME:latest"
+    IMG_NAME="1cmregistry.azurecr.io/$REPOSITORY_NAME:latest"
 fi
 
 # Case of AWS
