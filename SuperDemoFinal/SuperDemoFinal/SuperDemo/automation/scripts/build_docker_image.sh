@@ -64,7 +64,7 @@ fi
 # Case of Azure
 if [[ "$CLOUD_FLAG_AZGCAW" == "100" ]]; then
     
-    az login --identity
+    az login
     az group create --name $AZURE_RES_GROUP --location $AZURE_REGION
     if [ $CLUSTER_NAME==0 ]; then
         #Create new AKS cluster with the same name as RES Group
@@ -74,7 +74,7 @@ if [[ "$CLOUD_FLAG_AZGCAW" == "100" ]]; then
     fi
     echo "CLUSTER CREATED. AUTHENTICATING WITH THE CURRENT USER..." 
     az aks get-credentials --resource-group $AZURE_RES_GROUP --name $CLUSTER_NAME
-    IMG_NAME="aloksdocker/$REPOSITORY_NAME:latest"
+    IMG_NAME="$REPOSITORY_NAME:latest"
 fi
 
 # Case of AWS
