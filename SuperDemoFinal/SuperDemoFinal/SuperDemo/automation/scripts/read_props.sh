@@ -46,7 +46,7 @@ echo "DOCKER FILE CREATED SUCCCESSFULLY AND PLACED AT - " $WORK_DIR " - AND FILE
 echo "Cloud Flag value is: " $CLOUD_FLAG_AZGCAW
 
 # This is for GKE
-if [[ "$CLOUD_FLAG_AZGCAW" == "010" ]]
+if [ "$CLOUD_FLAG_AZGCAW" == "010" ]
 then
 	echo "STARTING GCP PROVISIONING & BUILD..."
 	echo "You selected Google Cloud Platform with Account: $GKE_ACCOUNT_ID."
@@ -60,7 +60,7 @@ then
 fi
 
 # This is for AZURE
-if [[ "$CLOUD_FLAG_AZGCAW" == "100" ]]
+if [ "$CLOUD_FLAG_AZGCAW" == "100" ]
 then
 	echo "STARTING AZURE PROVISIONING & BUILD..."
 	echo "You selected Azure cloud with Azure resource group: $AZURE_RES_GROUP & Region: $AZURE_REGION."
@@ -75,7 +75,7 @@ then
 fi
 
 # This is for AWS
-if [[ "$CLOUD_FLAG_AZGCAW" == "001" ]]
+if [ "$CLOUD_FLAG_AZGCAW" == "001" ]
 then
 	echo "STARTING AWS PROVISIONING & BUILD..."
 	echo "You selected Amazon Web Services cloud with Account: $AWS_ACCOUNT_ID & Region: $AWS_REGION."
