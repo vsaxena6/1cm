@@ -66,7 +66,7 @@ if [[ "$CLOUD_FLAG_AZGCAW" == "100" ]]; then
     
     az login
     az group create --name $AZURE_RES_GROUP --location $AZURE_REGION
-    az acr login --name 1cmregistry
+    az acr login --name vishal1cmregistry
     if [ $CLUSTER_NAME==0 ]; then
         #Create new AKS cluster with the same name as RES Group
         CLUSTER_NAME=$AZURE_RES_GROUP
@@ -75,7 +75,7 @@ if [[ "$CLOUD_FLAG_AZGCAW" == "100" ]]; then
     fi
     echo "CLUSTER CREATED. AUTHENTICATING WITH THE CURRENT USER..." 
     az aks get-credentials --resource-group $AZURE_RES_GROUP --name $CLUSTER_NAME
-    IMG_NAME="1cmregistry.azurecr.io/$REPOSITORY_NAME:latest"
+    IMG_NAME="vishal1cmregistry.azurecr.io/$REPOSITORY_NAME:latest"
 fi
 
 # Case of AWS
