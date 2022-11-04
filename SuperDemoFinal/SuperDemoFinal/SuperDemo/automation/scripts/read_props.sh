@@ -102,6 +102,8 @@ if [ ! -z "$IMG_NAME" ]; then
 		echo "SERVICE YAML CREATED DYNAMICALLY"
 		sleep 10s
 	fi
+	az account set --subscription 7868ddd3-ae74-485b-be97-95003d15cd81
+	az aks get-credentials --resource-group $AZURE_RES_GROUP --name $CLUSTER_NAME
 	kubectl apply -f $WORK_DIR/$REPOSITORY_NAME'_''deployment.yaml'
 	kubectl apply -f $WORK_DIR/$REPOSITORY_NAME'_''service.yaml'
 	echo "KUBERNETES OBJECTS CREATED SUCCESSFULLY"
