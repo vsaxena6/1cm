@@ -94,6 +94,9 @@ if [ ! -z "$IMG_NAME" ]; then
 	if [ $? -eq 0 ]; then
 		sh create_deployment_yaml.sh $WORK_DIR $REPOSITORY_NAME $IMG_NAME $PORT_NUM
 		echo "DEPLOYMENT YAML CREATED DYNAMICALLY"
+		echo $WORK_DIR
+		echo $REPOSITORY_NAME
+		echo "----------------"
 		sleep 10s
 		sh create_service_yaml.sh $WORK_DIR $REPOSITORY_NAME $PORT_NUM $LAUNCH_PORT
 		echo "SERVICE YAML CREATED DYNAMICALLY"
