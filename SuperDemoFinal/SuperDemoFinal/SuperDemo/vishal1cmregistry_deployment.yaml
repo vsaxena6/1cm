@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vishal1cmregistry
+  labels: 
+    app: vishal1cmregistry
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vishal1cmregistry
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: vishal1cmregistry
+    spec:
+      containers:
+      - name: vishal1cmregistry
+        image: vishal1cmregistry.azurecr.io/vishal1cmregistry:latest
+        ports:
+        - containerPort: 80
+          protocol: TCP

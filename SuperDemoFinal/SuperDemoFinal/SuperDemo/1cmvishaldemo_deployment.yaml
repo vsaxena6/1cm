@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 1cmvishaldemo
+  labels: 
+    app: 1cmvishaldemo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: 1cmvishaldemo
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: 1cmvishaldemo
+    spec:
+      containers:
+      - name: 1cmvishaldemo
+        image: 1cmregistry.azurecr.io/1cmvishaldemo:latest
+        ports:
+        - containerPort: 80
+          protocol: TCP
